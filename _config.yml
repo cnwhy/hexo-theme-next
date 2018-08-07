@@ -966,6 +966,14 @@ vendors:
   # Example: https://cdn.jsdelivr.net/npm/valine@1.1.8/dist/Valine.min.js
   valine:
 
+#google adsense#
+
+#google_ad_client: ca-pub-8851564673191712
+#ad_id:
+#  sidebar: 
+#  content: 
+#  bottom: 
+
 
 # Assets
 css: css
