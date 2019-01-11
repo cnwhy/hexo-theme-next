@@ -1,4 +1,5 @@
 {% macro render(is_post) %}
+  {% import "../_third-party/adsense/show.swig" as ad_show %}
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
       <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
@@ -183,7 +184,7 @@
           {% endif %}
         </div>
       {% endif %}
-
+      {{ ad_show.render(theme.google_adsense.ad_id.sidebar,'auto') }}
     </div>
   </aside>
 {% endmacro %}

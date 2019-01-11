@@ -1,5 +1,5 @@
 {% macro render(post, is_index, post_extra_class) %}
-
+  {% import "../_third-party/adsense/show.swig" as ad_show %}
   {% set headlessPost = Array.prototype.indexOf.call(['quote', 'picture'], post.type) > -1 %}
 
   {% set post_class = 'post post-type-' + post.type | default('normal') %}
@@ -341,6 +341,7 @@
           {% endif %}
         {% endif %}
       {% else %}
+        {{ad_show.render(theme.google_adsense.ad_id.content,'fluid')}}
         {{ post.content }}
       {% endif %}
     </div>
@@ -461,6 +462,9 @@
       {% set isLast = loop.index % page.per_page === 0 %}
       {% if is_index and not isLast %}
         <div class="post-eof"></div>
+      {% endif %}
+      {% if not is_index %}
+        {{ad_show.render(theme.google_adsense.ad_id.bottom,'auto')}}
       {% endif %}
     </footer>
   </div>
